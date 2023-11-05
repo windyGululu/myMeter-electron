@@ -6,6 +6,7 @@ function createWindow() {
     const win = new BrowserWindow({
         width: 1200,
         height: 900,
+        // frame: false, // 隐藏顶部菜单
         webPreferences: {
             nodeIntegration: true
         }
