@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <!-- <nav>
-      <RouterLink to="home">首页</RouterLink>
-      <RouterLink to="interface-test">接口测试</RouterLink>
-    </nav> -->
-    <!-- <a-menu :items="items" /> -->
+  <div class="main">
     <nav>
-      <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+      <el-menu default-active="1" class="index-el-menu" @open="handleOpen" @close="handleClose">
         <RouterLink v-for="(item, index) in menu_items" :to="item.path" :key="index">
           <el-menu-item :index=index>
             <el-icon>
@@ -48,27 +43,25 @@ export default {
 
 </script>
 <style scoped>
+.main {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
 nav {
-  position: fixed;
-  left: 10px;
-  top: 10px;
-
-}
-
-/* 设置路由链接的样式 */
-a {
-  color: #fff;
-}
-
-/* 设置路由链接的选中样式 */
-a.router-link-active {
-  color: #409eff;
+  height: 100%;
 }
 
 .container {
-  position: fixed;
-  top: 10px;
-  left: 150px;
+  flex: 1;
+}
 
+.index-el-menu {
+  height: 100%;
 }
 </style>
